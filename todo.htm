@@ -1,0 +1,18 @@
+
+<div ng-controller="TodoCtrl">
+	<h1>Total todos: {{totalTodos()}}</h1>
+	<ul ng-controller="InnerCtrl">
+		<li ng-repeat="todo in todos">
+			<input type="checkbox" ng-model="todo.done" />
+			{{todo.text}}
+			{{todo.done}}
+		</li>
+	</ul>
+<form>
+<input type="text" ng-model="formTodoText" ng-model-instant>
+<button ng-click="addToDo()">Add to list</button>
+</form>
+
+<button ng-click="clearList()">Clear list</button>
+
+</div>

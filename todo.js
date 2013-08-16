@@ -14,3 +14,8 @@ function TodoCtrl($scope) {
 		$scope.todos =  _.filter($scope.todos,function(todo){return !todo.done;});
 	}
 }
+
+function InnerCtrl($scope){
+	
+
+}
