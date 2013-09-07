@@ -1,0 +1,23 @@
+<html ng-app> <head>
+<title>Your Shopping Cart</title> </head>
+<body ng-controller="StartUpController"> 
+
+<form> Starting: <input ng-change="computeNeeded()"
+ng-model="funding.startingEstimate"> Recommendation: {{needed}}
+</form>
+
+<button ng-click="test()" />
+
+<script src="scripts/resources/angular.js"></script>
+<script>
+function StartUpController($scope) {
+$scope.funding = { startingEstimate: 0 };
+computeNeeded = function() {
+        $scope.needed = $scope.funding.startingEstimate * 10;
+      };
+$scope.test = function(){$scope.funding.startingEstimate = 1000;};
+$scope.$watch("funding.startingEstimate", computeNeeded);
+}
+</script>
+      </body>
+    </html>
